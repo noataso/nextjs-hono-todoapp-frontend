@@ -17,11 +17,11 @@ const LoginForm = () => {
     e.preventDefault();
     const data={email,password}
     const res=await axios.post(`${BASE_URL}/auth/login`,data)
-    if(res.data.message==="Email is not found"){
+    if(res.data.username==="Email is not found"){
       console.log(res.data.message)
       return
     }
-    if(res.data.message==="Password does not match"){
+    if(res.data.username==="Password does not match"){
       return
     }
     return [

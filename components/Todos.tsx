@@ -110,12 +110,17 @@ const Todos = ({username}:TodosProps) => {
                 router.push(`/account/login`)
                 return
             }
-            else if(username===""){
+            if(storageUsername==="undefined"){
+                localStorage.removeItem("username")
+                router.push(`/account/login`)
+                return
+            }
+            if(username===""){
                 getTodos();
                 getUser(storageUsername);
                 return
             }
-            else if(storageUsername!==username){
+            if(storageUsername!==username){
                 router.push(`/account/${storageUsername}`)
                 return
             }

@@ -28,7 +28,7 @@ const RegisterForm = () => {
     }
     const data={username,email,password}
     const res=await axios.post(`${BASE_URL}/auth/register`,data)
-    if(res.data.message==="Username or email already exist"){
+    if(res.data.username==="Username or email already exist"){
       return
     }
     return [
